@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, send_from_directory, jsonify
+from flask import Flask, request, redirect, send_from_directory, jsonify, render_template
 from flask_cors import CORS
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
