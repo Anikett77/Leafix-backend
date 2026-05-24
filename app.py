@@ -1,10 +1,14 @@
 from flask import Flask, request, redirect, send_from_directory, jsonify
 from flask_cors import CORS
 import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 import numpy as np
 import json
 import uuid
 import tensorflow as tf
+tf.config.threading.set_intra_op_parallelism_threads(1)
+tf.config.threading.set_inter_op_parallelism_threads(1)
 import gdown
 
 app = Flask(__name__)
